@@ -5,7 +5,6 @@ import { NetworkFirst, CacheFirst, StaleWhileRevalidate } from 'workbox-strategi
 import { BASE_URL } from './config';
 
 precacheAndRoute(self.__WB_MANIFEST);
-precacheAndRoute(manifest);
 
 registerRoute(
   ({ url }) => {

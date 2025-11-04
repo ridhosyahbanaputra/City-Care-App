@@ -16,6 +16,9 @@ export default class Map {
       url.searchParams.set('limit', '1');
 
       const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`API request failed with status ${response.status}`);
+      }
       const json = await response.json();
 
       const place = json.features[0].place_name.split(',');
